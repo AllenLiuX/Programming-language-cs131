@@ -6,81 +6,89 @@ type ('nonterminal, 'terminal) parse_tree =
   | Node of 'nonterminal * ('nonterminal, 'terminal) parse_tree list
   | Leaf of 'terminal
 
-(* Problem 1 *)
-let rec find_in_list rules_list type_param  = match rules_list with
-	|[] -> []
-	|hd::tl -> if (fst hd) = type_param then (snd hd) :: find_in_list tl type_param
-				else find_in_list tl type_param;;
+(*Problem 1*)
+let rec extract_list rules_list target  = match rules_list with
+	| [] -> []
+	| start::rest -> if (fst start) = target then (snd start) ::(extract_list rest target)
+        else extract_list rest target;;
 
-let convert_grammar graml = ((fst graml), find_in_list (snd graml));;
+let convert_grammar graml =
+    ((fst graml), fun nt -> extract_list (snd graml) nt);;
 
-(* Problem 2 *)
-let rec parse_tree_helper tree_list = match tree_list with
-	|[] -> []
-	|hd::tl -> match hd with
-		|Leaf leaf -> leaf::parse_tree_helper tl
-		|Node (nonterm, subtree) -> parse_tree_helper subtree @ parse_tree_helper tl;;
+(*Problem 2*)
+let rec set_union a b = match a with
+    |  [] -> b
+    |  start::rest -> set_union rest (start::b);;
 
-let rec parse_tree_leaves tree = parse_tree_helper [tree];;
+let rec find_leaves tree_list = match tree_list with
+	| [] -> []
+	| start::rest -> match start with
+		| Leaf leaf -> leaf::find_leaves rest
+		| Node (nonterm, subtree) -> find_leaves subtree @ (find_leaves rest);;
 
-(* Problem 3 *)
-let accept_all string = Some string;;
-let accept_empty_suffix x  = match x with
-   | _::_ -> None
-   | x -> Some x;;
+let rec parse_tree_leaves tree = find_leaves [tree];;
 
-let rec match_rules_list gram_func rules_list acceptor fragment = match rules_list with
-	|[] -> None
-	|hd::tl ->
-		let result = match_rule gram_func hd acceptor fragment in
-		if result = None then match_rules_list gram_func tl acceptor fragment
+(*Problem 3*)
+(*let accept_all string = Some string;;*)
+(*let accept_empty_suffix x  = match x with*)
+(*   | _::_ -> None*)
+(*   | x -> Some x;;*)
+
+let rec make_match_helper gram_func rules_list acceptor fragment = match rules_list with
+	| [] -> None
+	| start::rest ->
+		let result = match_rule gram_func start acceptor fragment in
+		if result = None then make_match_helper gram_func rest acceptor fragment
 		else result
 and match_rule gram_func rule acceptor fragment = match rule with
-	|[] -> acceptor fragment
-	|rule_hd::rule_tl -> match rule_hd with
-		|N sym ->
-			let next_rules = gram_func sym in
-			let new_acceptor = match_rule gram_func rule_tl acceptor in
-			match_rules_list gram_func next_rules new_acceptor fragment
-		|T sym -> match fragment with
+	| [] -> acceptor fragment
+	| rule_start::rule_rest -> match rule_start with
+		| N sym ->
+			let cur_rules = gram_func sym in
+			let acceptor2 = match_rule gram_func rule_rest acceptor in
+			make_match_helper gram_func cur_rules acceptor2 fragment
+		| T sym -> match fragment with
 			|[] -> None
-			|frag_hd::frag_tl -> if frag_hd = sym then match_rule gram_func rule_tl acceptor frag_tl
-									else None;;
+			|fragment_start::fragment_rest -> 
+                if fragment_start = sym 
+                    then match_rule gram_func rule_rest acceptor fragment_rest					
+                else None;;
 
-let make_matcher graml = match_rules_list (snd graml) ((snd graml) (fst graml));;
 
-(* Problem 4 *)
+let make_matcher graml = make_match_helper (snd graml) ((snd graml) (fst graml));;
+
+(*Problem 4*)
 let parse_acceptor path fragment = match fragment with
 	|[] -> Some path
 	|_ -> None;;
 
-(* Iterate through the list of rules*)
+(*Iterate through the list of rules*)
 let rec parse_rules_list gram_func rules_list start_sym acceptor path fragment = match rules_list with
 	|[] -> None
-	|hd::tl ->
+	|start::rest ->
 		(* Result of matching this particular rule *)
-		let result = parse_rule gram_func hd acceptor ((start_sym, hd)::path) fragment in
+		let result = parse_rule gram_func start acceptor ((start_sym, start)::path) fragment in
 		(match result with
 			(* None means that there was no match found for the rule, so we can move onto the next rule *)
-			|None -> parse_rules_list gram_func tl start_sym acceptor path fragment
+			|None -> parse_rules_list gram_func rest start_sym acceptor path fragment
 			(* Anything else means that there was a suffix remaining even though we matched the rule *)
 			|_ -> result
 		)
 (* Iterate through each symbol of the particular rule *)
 and parse_rule gram_func rule acceptor path fragment = match rule with
 	|[] -> acceptor path fragment
-	|rule_hd::rule_tl -> match rule_hd with
+	|rule_start::rule_rest -> match rule_start with
 		(* Found a nonterminal symbol, so recurse and go one layer deeper *)
 		|N sym ->
-			let next_rules = gram_func sym in
-			let new_acceptor = parse_rule gram_func rule_tl acceptor in
+			let cur_rules = gram_func sym in
+			let acceptor2 = parse_rule gram_func rule_rest acceptor in
 			(* Recursively call the function with new set of rules and start symbol *)
-			parse_rules_list gram_func next_rules sym new_acceptor path fragment
+			parse_rules_list gram_func cur_rules sym acceptor2 path fragment
 		(* Found a terminal symbol, so check to see if it matches our fragment *)
 		|T sym -> match fragment with
 			|[] -> None
 			(* If they match, recursively call this function to check the next symbols in the rule and fragment *)
-			|frag_hd::frag_tl -> if frag_hd = sym then parse_rule gram_func rule_tl acceptor path frag_tl
+			|fragment_start::fragment_rest -> if fragment_start = sym then parse_rule gram_func rule_rest acceptor path fragment_rest
 									else None;;
 
 (* Make the parse tree, given a path *)
@@ -102,20 +110,20 @@ let make_tree path_maker fragment =
 		(* Gets the same level in the tree, which are all siblings *)
 		and get_children path_remaining rule = match rule with
 		|[] -> path_remaining, []
-		|rule_hd::rule_tl ->
-			(match rule_hd with
+		|rule_start::rule_rest ->
+			(match rule_start with
 			(* If it's a nonterminal symbol, we need to construct the tree at the symbol and append it to sibling trees *)
 			|N sym ->
 				let make_tree_result = make_tree_helper path_remaining in
 				let next_path_remaining = fst make_tree_result in
 				let curr_tree = snd make_tree_result in
-				let get_children_result = get_children next_path_remaining rule_tl in
+				let get_children_result = get_children next_path_remaining rule_rest in
 				let next_next_path_remaining = fst get_children_result in
 				let siblings = snd get_children_result in
 				next_next_path_remaining, curr_tree::siblings
 			(* If it's a terminal symbol, we just need to append it to its siblings *)
 			|T sym ->
-				let result = get_children path_remaining rule_tl in
+				let result = get_children path_remaining rule_rest in
 				let next_path_remaining = fst result in
 				let siblings = snd result in
 				next_path_remaining, (Leaf sym)::siblings) in
