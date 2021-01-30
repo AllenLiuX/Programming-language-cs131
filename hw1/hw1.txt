@@ -1,0 +1,21 @@
+Problem 1-4
+For the first 4 problems, I utilized similar strategy, that is do the iterations of list by using recursive functions.
+The key idea is to find the base case so that the function can stop at appropriate point and with actions in the easiest
+situation. Also, the backtrace step is a little intricate such that problem 1 uses the && logic of each element to check
+the subset attribute, and problem 4 uses a recursive helper function set_diff that adds the element in 'a list that is
+not contained by 'b list each time in order to be returned at last.
+
+Problem 6
+This problem uses the direct logic such that the function returns x when we find f(x)=x when eq is '=', otherwise try again
+by substituting x with f(x) until it finds fixed point by definition.
+
+Problem 7
+I consider this problem as a directed graph traversal problem. So, I decided that I need three helper functions, such that
+function1 entry_rules can find rules that can be reached with a non-terminal symbols a given the grammar to be examined;
+function2 find_non-terminal can return all the elements in a list that is terminal, so that we would not try find reachable
+rules with terminal symbols; function3 find_useless basically uses the idea of queue, such that each time a's reachable
+non-terminal symbols are pushed into next 'a and is recursively called again by find_useless, b stores the rules that
+are not reached yet, and c stores the non-terminal symbols that have already been examined, so that our recursive function
+would not be in an infinite loop that keep examining the same symbols.
+Thus, with the third helper function, we can filter_reachable by finding the symmetric difference between the original rules
+and the useless rules that we found.
