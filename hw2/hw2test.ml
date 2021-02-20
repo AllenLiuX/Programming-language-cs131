@@ -1,60 +1,49 @@
-type my_nonterminals =
-	| Sentence | NounPhrase | VerbPhrase | Noun | Verb | Adjective | Adverb
+(*Problem 5*)
+let accept_all string = Some string
+let accept_empty_suffix = function
+   | _::_ -> None
+   | x -> Some x
 
-let my_grammar =
-	(Sentence,
-		function
-		|Sentence ->
-			[
-				[N NounPhrase; N VerbPhrase]
-			]
-		|NounPhrase ->
-			[
-				[N Noun];
-				[N Adjective; N Noun]
-			]
-		|VerbPhrase ->
-			[
-				[N Verb];
-				[N Verb; N Adverb]
-			]
-		|Noun ->
-			[
-				[T"Dogs"];
-				[T"Cats"]
-			]
-		|Verb ->
-			[
-				[T"run"];
-				[T"walk"]
-			]
-		|Adjective ->
-			[
-				[T"Brown"];
-				[T"White"]
-			]
-		|Adverb ->
-			[
-				[T"quickly"];
-				[T"slowly"]
-			])
+type english_nonterminals =
+  | S | NP | VP | A | Nn | PN | V
 
-(* Problem 5 *)
-let make_matcher_test =
-	((make_matcher my_grammar accept_all ["White"; "Dogs"; "run"; "slowly"]) = Some ["slowly"])
+let english_grammar =
+(S,
+function
+ | S ->
+    [[N NP; N VP]]
+ | VP ->
+    [[N V]; [N V; N NP]]
+ | NP ->
+    [[N A; N Nn]; [N PN]]
+ | A ->
+    [[T"a"]; [T"the"]]
+ | Nn ->
+    [[T"cat"]; [T"gift"]; [T "book"]; [T "house"]; [T "map"]]
+ | PN ->
+    [[T"Jack"]; [T"Vincent"]; [T"Jerry"]]
+ | V ->
+    [[T "sees"]; [T "have"]; [T "is"]; [T "wants"]; [T "takes"]]
+)
 
-(* Problem 6 *)
-let make_parser_test =
-	((make_parser my_grammar ["White"; "Dogs"; "run"; "slowly"]) =
-		Some (Node (Sentence,
-            [Node (NounPhrase,
-                [Node (Adjective,
-                    [Leaf "White"]);
-                Node (Noun,
-                    [Leaf "Dogs"])]);
-            Node (VerbPhrase,
-                [Node (Verb,
-                    [Leaf "run"]);
-                Node (Adverb,
-                    [Leaf "slowly"])])])))
+let make_matcher_test = ((make_matcher english_grammar accept_all ["Jerry"; "wants"; "a"; "gift"]) = Some ["a"; "gift"])
 
+(*Problem 6*)
+let terminal_frag = ["Jerry"; "wants"; "a"; "gift"]
+
+let make_parser_test1 =
+  ((make_parser english_grammar terminal_frag) =
+   Some
+   (Node (S,
+     [Node (NP, [Node (PN, [Leaf "Jerry"])]);
+      Node (VP,
+       [Node (V, [Leaf "wants"]);
+        Node (NP, [Node (A, [Leaf "a"]); Node (Nn, [Leaf "gift"])])])])));;
+
+let make_parser_test2 =
+    parse_tree_leaves
+   (Node (S,
+     [Node (NP, [Node (PN, [Leaf "Jerry"])]);
+      Node (VP,
+       [Node (V, [Leaf "wants"]);
+        Node (NP, [Node (A, [Leaf "a"]); Node (Nn, [Leaf "gift"])])])])) = terminal_frag;;

@@ -1,0 +1,51 @@
+(*Problem 7*)
+I wrote make_parser in terms of make_matcher, because make_parser's logic
+is very similar to make_matcher's, such that they both convert the grammar
+into a proper format similar to tree, while make_parser further keeps track
+of the paths and stores them into a tree data structure.
+
+I didn't use approach to avoid duplication in the two functions, because
+the make_parser has extra functionalities compared with make_parser, and
+using boolean variables to deal with different functionalities in a single
+function would be too complicated, so I decided to write two similar
+functions while most of the logic and code of make_parser is borrowed
+from the ones in make_matcher.
+
+I implemented the make_matcher such that I wrote a make_match_helper
+function and it recursively finds the matched rule with another
+helper function rule_matcher to deal with nonterminal and terminal
+separately either to added as "leaves" or recursively dive into deeper
+layer to match rules.
+
+I implemented the make_parser first with a recursive function tree_maker
+such that it can make a tree data structure based on the path that we
+generated along the make_parser. When the examined symbol is a terminal,
+we append it to its siblings and recursively find children in remained paths;
+When the examined symbol is a nonterminal, we construct the tree at the
+symbol and append it to sibling trees, such that we recursively call our
+make_match_helper function and update the acceptor such the it will not
+only match the first symbol.
+
+Then, we have the make_parser_helper that is directly called by our final
+make_parser to extract the path info for making the tree. It recursively
+examines the alternative list such that the path for constructing tree
+is returned. Further, the function rule_parser matches each rule in the
+currently examined one among the alternative list with terminal and
+nonterminal(just like our matcher did), and when it is nonterminal, it
+would further dive into deep layer and call make_parser_helper; when it
+is terminal, it would further match the rule with our rule_parser with each
+symbol in the fragment. Therefore, the make_parser_helper is able to examine
+all the rules in the alternative list in a pre-order way by recursively
+examines current node and deeper nodes in the rule to match all the symbols
+in the fragment.
+
+The weakness of my code is that only the first matched result will be
+returned by my make_parser and make_matcher, since I recursively
+traverse the nodes in a given sequence, such that the order of the input
+would affect the result of my parser and matcher. Therefore, in most
+cases, the parser and the matcher wouldn't find the best result, but
+usually find the shortest one that matches the grammar requirement.
+For example, when the input is "["Jerry"; "wants"; "a"; "gift"]" as
+the fragment for a English grammar matcher, my algorithm would only
+match the ["Jerry"; "wants"] as the prefix, since it satisfies the
+requirement of grammar. However, the full sentence would not be matched.
