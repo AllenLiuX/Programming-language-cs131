@@ -1,0 +1,7 @@
+2021-03-11 20:14:56,043 INFO     Opened client session
+2021-03-11 20:14:57,514 DEBUG    Using selector: KqueueSelector
+2021-03-11 20:14:57,516 INFO     Sent to Riley: IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 20:14:57,519 INFO     Received from Riley: AT Riley +1255768.598286152 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 20:14:57,519 INFO     Closed the connection with Riley
+
+2021-03-11 20:16:44,128 INFO     Session ended.

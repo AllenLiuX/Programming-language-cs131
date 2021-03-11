@@ -1,0 +1,7 @@
+2021-03-11 18:58:22,707 INFO     Opened client session
+2021-03-11 18:58:52,207 DEBUG    Using selector: KqueueSelector
+2021-03-11 18:58:52,208 INFO     Sent to Bernard: IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 18:58:52,214 INFO     Received from Bernard: 
+2021-03-11 18:58:52,215 INFO     Closed the connection with Bernard
+
+2021-03-11 19:02:01,838 INFO     Session ended.

@@ -16,3 +16,4 @@
 2021-03-11 17:37:20,567 INFO     Closed the connection with ('127.0.0.1', 49444)
 2021-03-11 17:37:20,567 INFO     Closing connection with Campbell
 2021-03-11 17:37:20,567 INFO     Closed the connection with ('127.0.0.1', 49435)
+2021-03-11 18:58:11,551 INFO     Server Juzang closed.

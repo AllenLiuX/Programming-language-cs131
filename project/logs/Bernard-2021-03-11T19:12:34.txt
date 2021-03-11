@@ -1,0 +1,41 @@
+2021-03-11 19:12:34,082 INFO     Opened server Bernard session
+2021-03-11 19:12:34,082 DEBUG    Using selector: KqueueSelector
+2021-03-11 19:12:34,083 INFO     Bernard serving on ('127.0.0.1', 15402)
+2021-03-11 19:12:37,808 INFO     Received from ('127.0.0.1', 51881): IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+
+2021-03-11 19:12:37,809 INFO     Propagating message to Jaquez: AT Bernard +1252028.8895859718 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:12:37,809 INFO     Closing connection with Jaquez
+2021-03-11 19:12:37,810 INFO     Propagating message to Juzang: AT Bernard +1252028.8895859718 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:12:37,810 INFO     Closing connection with Juzang
+2021-03-11 19:12:37,811 INFO     Propagating message to Campbell: AT Bernard +1252028.8895859718 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:12:37,811 INFO     Closing connection with Campbell
+2021-03-11 19:12:37,811 INFO     Responded to client ('127.0.0.1', 51881): AT Bernard +1252028.8895859718 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:12:37,811 INFO     Closed the connection with ('127.0.0.1', 51881)
+2021-03-11 19:12:37,812 INFO     Received from ('127.0.0.1', 51881): 
+2021-03-11 19:12:37,812 ERROR    Invalid message: 
+2021-03-11 19:12:37,812 INFO     Responded to client ('127.0.0.1', 51881): ? 
+2021-03-11 19:12:37,812 INFO     Closed the connection with ('127.0.0.1', 51881)
+2021-03-11 19:17:31,717 INFO     Received from ('127.0.0.1', 51973): IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:31,718 INFO     Propagating message to Jaquez: AT Bernard +1252322.798509121 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:31,718 INFO     Closing connection with Jaquez
+2021-03-11 19:17:31,719 INFO     Propagating message to Juzang: AT Bernard +1252322.798509121 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:31,719 INFO     Closing connection with Juzang
+2021-03-11 19:17:31,719 INFO     Propagating message to Campbell: AT Bernard +1252322.798509121 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:31,720 INFO     Closing connection with Campbell
+2021-03-11 19:17:31,720 INFO     Responded to client ('127.0.0.1', 51973): AT Bernard +1252322.798509121 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:31,720 INFO     Closed the connection with ('127.0.0.1', 51973)
+2021-03-11 19:17:33,872 INFO     Received from ('127.0.0.1', 51985): IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+
+2021-03-11 19:17:33,873 INFO     Propagating message to Jaquez: AT Bernard +1252324.9535770416 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:33,873 INFO     Closing connection with Jaquez
+2021-03-11 19:17:33,873 INFO     Propagating message to Juzang: AT Bernard +1252324.9535770416 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:33,874 INFO     Closing connection with Juzang
+2021-03-11 19:17:33,874 INFO     Propagating message to Campbell: AT Bernard +1252324.9535770416 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:33,875 INFO     Closing connection with Campbell
+2021-03-11 19:17:33,875 INFO     Responded to client ('127.0.0.1', 51985): AT Bernard +1252324.9535770416 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:33,875 INFO     Closed the connection with ('127.0.0.1', 51985)
+2021-03-11 19:17:33,875 INFO     Received from ('127.0.0.1', 51985): 
+2021-03-11 19:17:33,875 ERROR    Invalid message: 
+2021-03-11 19:17:33,875 INFO     Responded to client ('127.0.0.1', 51985): ? 
+2021-03-11 19:17:33,875 INFO     Closed the connection with ('127.0.0.1', 51985)
+2021-03-11 20:02:58,527 INFO     Server Bernard closed.

@@ -1,0 +1,28 @@
+2021-03-11 19:11:08,763 INFO     Opened server Juzang session
+2021-03-11 19:11:08,763 DEBUG    Using selector: KqueueSelector
+2021-03-11 19:11:08,764 INFO     Juzang serving on ('127.0.0.1', 15404)
+2021-03-11 19:11:37,688 INFO     Received from ('127.0.0.1', 51835): AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,688 INFO     Received new propagated information about location of kiwi.cs.ucla.edu
+2021-03-11 19:11:37,689 INFO     Propagating message to Riley: AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,689 INFO     Closing connection with Riley
+2021-03-11 19:11:37,693 INFO     Propagating message to Bernard: AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,693 INFO     Closing connection with Bernard
+2021-03-11 19:11:37,693 INFO     Received from ('127.0.0.1', 51841): AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,693 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 19:11:37,693 INFO     Closed the connection with ('127.0.0.1', 51841)
+2021-03-11 19:11:37,694 INFO     Propagating message to Campbell: AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,694 INFO     Closing connection with Campbell
+2021-03-11 19:11:37,694 INFO     Closed the connection with ('127.0.0.1', 51835)
+2021-03-11 19:11:37,694 INFO     Received from ('127.0.0.1', 51844): AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,694 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 19:11:37,694 INFO     Closed the connection with ('127.0.0.1', 51844)
+2021-03-11 19:12:37,811 INFO     Received from ('127.0.0.1', 51883): AT Bernard +1252028.8895859718 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:12:37,811 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 19:12:37,811 INFO     Closed the connection with ('127.0.0.1', 51883)
+2021-03-11 19:17:31,719 INFO     Received from ('127.0.0.1', 51983): AT Bernard +1252322.798509121 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:31,719 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 19:17:31,719 INFO     Closed the connection with ('127.0.0.1', 51983)
+2021-03-11 19:17:33,874 INFO     Received from ('127.0.0.1', 51987): AT Bernard +1252324.9535770416 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:17:33,874 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 19:17:33,874 INFO     Closed the connection with ('127.0.0.1', 51987)
+2021-03-11 20:03:04,038 INFO     Server Juzang closed.

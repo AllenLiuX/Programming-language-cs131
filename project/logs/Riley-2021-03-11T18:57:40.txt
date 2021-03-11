@@ -1,0 +1,4 @@
+2021-03-11 18:57:40,790 INFO     Opened server Riley session
+2021-03-11 18:57:40,790 DEBUG    Using selector: KqueueSelector
+2021-03-11 18:57:40,791 INFO     Riley serving on ('127.0.0.1', 15400)
+2021-03-11 18:57:42,772 INFO     Server Riley closed.

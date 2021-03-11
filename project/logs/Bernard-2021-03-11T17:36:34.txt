@@ -45,3 +45,4 @@
 2021-03-11 17:42:30,047 ERROR    Invalid message: 
 2021-03-11 17:42:30,047 INFO     Responded to client ('127.0.0.1', 49452): ? 
 2021-03-11 17:42:30,047 INFO     Closed the connection with ('127.0.0.1', 49452)
+2021-03-11 18:58:00,323 INFO     Server Bernard closed.

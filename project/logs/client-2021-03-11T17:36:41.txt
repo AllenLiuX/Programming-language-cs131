@@ -16,3 +16,4 @@
 
 2021-03-11 17:42:30,047 INFO     Closed the connection with Bernard
 
+2021-03-11 18:58:17,833 INFO     Session ended.

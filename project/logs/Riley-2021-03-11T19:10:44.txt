@@ -1,0 +1,14 @@
+2021-03-11 19:10:44,367 INFO     Opened server Riley session
+2021-03-11 19:10:44,368 DEBUG    Using selector: KqueueSelector
+2021-03-11 19:10:44,368 INFO     Riley serving on ('127.0.0.1', 15400)
+2021-03-11 19:11:37,689 INFO     Received from ('127.0.0.1', 51836): AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,689 INFO     Received new propagated information about location of kiwi.cs.ucla.edu
+2021-03-11 19:11:37,690 INFO     Propagating message to Jaquez: AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,690 INFO     Closing connection with Jaquez
+2021-03-11 19:11:37,690 INFO     Received from ('127.0.0.1', 51838): AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,691 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 19:11:37,691 INFO     Closed the connection with ('127.0.0.1', 51838)
+2021-03-11 19:11:37,691 INFO     Propagating message to Juzang: AT Bernard +1251968.7667860985 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 19:11:37,692 INFO     Closing connection with Juzang
+2021-03-11 19:11:37,692 INFO     Closed the connection with ('127.0.0.1', 51836)
+2021-03-11 20:02:51,392 INFO     Server Riley closed.

@@ -11,3 +11,4 @@
 2021-03-11 17:37:20,564 INFO     Closed the connection with ('127.0.0.1', 49439)
 2021-03-11 17:37:20,565 INFO     Closing connection with Bernard
 2021-03-11 17:37:20,565 INFO     Closed the connection with ('127.0.0.1', 49434)
+2021-03-11 18:57:49,203 INFO     Server Jaquez closed.

@@ -1,0 +1,14 @@
+2021-03-11 20:02:56,561 INFO     Opened server Jaquez session
+2021-03-11 20:02:56,562 DEBUG    Using selector: KqueueSelector
+2021-03-11 20:02:56,562 INFO     Jaquez serving on ('127.0.0.1', 15401)
+2021-03-11 20:03:14,424 INFO     Received from ('127.0.0.1', 53318): AT Bernard +1255065.5042881966 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 20:03:14,424 INFO     Received new propagated information about location of kiwi.cs.ucla.edu
+2021-03-11 20:03:14,425 INFO     Propagating message to Riley: AT Bernard +1255065.5042881966 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 20:03:14,425 INFO     Closing connection with Riley
+2021-03-11 20:03:14,427 INFO     Propagating message to Bernard: AT Bernard +1255065.5042881966 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 20:03:14,428 INFO     Received from ('127.0.0.1', 53321): AT Bernard +1255065.5042881966 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 20:03:14,428 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 20:03:14,428 INFO     Closed the connection with ('127.0.0.1', 53321)
+2021-03-11 20:03:14,428 INFO     Closing connection with Bernard
+2021-03-11 20:03:14,428 INFO     Closed the connection with ('127.0.0.1', 53318)
+2021-03-11 20:03:40,502 INFO     Server Jaquez closed.
