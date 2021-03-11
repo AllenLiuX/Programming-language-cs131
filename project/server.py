@@ -3,8 +3,7 @@ import datetime
 import asyncio
 import aiohttp
 import json
-import os
-# import logging
+
 
 APIKEY = 'AIzaSyAI4IRkMeECJEBQCKH6wrRiWu1X4k76xII'
 
@@ -38,21 +37,15 @@ async def fetch(url):
 
 
 async def retrieve_nearby(coord, radius, place_num):
-    # async with aiohttp.ClientSession() as session:
     coord_li = coord_trans(coord)
     coord_in = coord_li[0]+','+coord_li[1]
     url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={coord_in}&radius={radius}&key={APIKEY}'
     write_log(f'Getting info at: {url}')
-    # async with session.get(url) as response:
-    #     places = await response.json(loads=json.loads)
     places = await fetch(url)
     write_log(f'Retrieved {len(places["results"])} places')
     if len(places['results']) > int(place_num):
         places['results'] = places['results'][:int(place_num)]
     return str(json.dumps(places, indent=4))
-# def coord_trans(coord):
-#     split = max(coord.rfind('+'), coord.rfind('-'))
-#     return f'{coord[:split]},{coord[split:]}'
 
 
 def coord_trans(coord):
@@ -82,14 +75,12 @@ def is_num(string):
 def write_log(message):
     print(message)
     logFile.write(message)
-    # logging.info(message)
 
 
 def write_error(message):
     message = 'ERROR! ' + message
     print(message)
     logFile.write(message)
-    # logging.error(message)
 
 
 class Server:
@@ -97,17 +88,7 @@ class Server:
         self.server_name = server_name
         self.port = PORT_NUMS[server_name]
         self.clients = {}
-
-        # # create timestamped server log file
-        # if not os.path.exists('logs'):
-        #     os.makedirs('logs')
-
-        # now = datetime.datetime.now()
-        # now_string = now.strftime('%Y-%m-%dT%H:%M:%S')
-        # logging.basicConfig(filename=f'logs/{server_name}-{now_string}.txt',
-        #                     format='%(asctime)s %(levelname)-8s %(message)s', level=logging.DEBUG)
         write_log(f'Opened server {server_name}')
-        # logging.info(f'Opened server {server_name} session')
 
     async def handle_cmd(self, reader, writer):
         while not reader.at_eof():
@@ -118,7 +99,6 @@ class Server:
 
             response = await self.parse_cmd(message)
             if response:
-                # await write_response(writer, response)
                 writer.write(response.encode())
                 write_log(f"Responded to client {addr}: {response}")
             writer.close()
@@ -154,7 +134,6 @@ class Server:
             return f'? {message}'
 
     async def i_am_at(self, client, coord, timestamp):
-        # coords = [s for s in coord.replace('-', '+').split('+') if s != ""]
         coords = coord_trans(coord)
         if len(coords) != 2 or not is_num(coords[0]) or not is_num(coords[1]):
             raise Exception(f'Invalid IAMAT coord: {coord}')
@@ -166,7 +145,6 @@ class Server:
             time_delta = '+' + str(time_delta)
         else:
             time_delta = str(time_delta)
-        # time_delta = '+' + str(time_delta) if time_delta > 0 else str(time_delta)
         response = f'AT {self.server_name} {time_delta} {client} {coord} {timestamp}'
 
         self.clients[client] = {'timestamp': timestamp, 'message': response}
@@ -187,7 +165,6 @@ class Server:
         return f'{at_cmd}\n{places_str}\n\n'
 
     async def at(self, server, time_delta, client, coord, timestamp):
-        # no need to error check because only servers will send AT's
         if client not in self.clients or timestamp > self.clients[client]['timestamp']:
             at_cmd = f'AT {server} {time_delta} {client} {coord} {timestamp}'
             self.clients[client] = {'timestamp': timestamp, 'message': at_cmd}
@@ -201,8 +178,6 @@ class Server:
         for reachable_server in CONNECTIONS[self.server_name]:
             try:
                 reader, writer = await asyncio.open_connection('127.0.0.1', PORT_NUMS[reachable_server])
-
-                # await write_response(writer, message)
                 writer.write(message.encode())
                 write_log(f'Propagating to {reachable_server}: {message}')
 
