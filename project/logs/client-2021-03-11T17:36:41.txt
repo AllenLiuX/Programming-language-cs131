@@ -1,0 +1,18 @@
+2021-03-11 17:36:41,275 INFO     Opened client session
+2021-03-11 17:36:42,845 DEBUG    Using selector: KqueueSelector
+2021-03-11 17:36:42,847 INFO     Sent to Bernard: WHATSAT kiwi.cs.ucla.edu 10 5
+2021-03-11 17:36:42,848 INFO     Received from Bernard: ? WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:36:42,848 INFO     Closed the connection with Bernard
+
+2021-03-11 17:37:20,556 DEBUG    Using selector: KqueueSelector
+2021-03-11 17:37:20,557 INFO     Sent to Bernard: IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,562 INFO     Received from Bernard: AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,562 INFO     Closed the connection with Bernard
+
+2021-03-11 17:37:29,502 DEBUG    Using selector: KqueueSelector
+2021-03-11 17:37:29,503 INFO     Sent to Bernard: WHATSAT kiwi.cs.ucla.edu 10 5
+2021-03-11 17:42:30,047 INFO     Received from Bernard: ? WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:42:30,047 INFO     Closed the connection with Bernard
+

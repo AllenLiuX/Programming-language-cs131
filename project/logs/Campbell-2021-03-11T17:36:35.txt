@@ -1,0 +1,13 @@
+2021-03-11 17:36:35,858 INFO     Opened server Campbell session
+2021-03-11 17:36:35,858 DEBUG    Using selector: KqueueSelector
+2021-03-11 17:36:35,859 INFO     Campbell serving on ('127.0.0.1', 15403)
+2021-03-11 17:37:20,562 INFO     Received from ('127.0.0.1', 49437): AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,562 INFO     Received new propagated information about location of kiwi.cs.ucla.edu
+2021-03-11 17:37:20,563 INFO     Propagating message to Bernard: AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,563 INFO     Closing connection with Bernard
+2021-03-11 17:37:20,566 INFO     Propagating message to Juzang: AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,566 INFO     Closing connection with Juzang
+2021-03-11 17:37:20,567 INFO     Closed the connection with ('127.0.0.1', 49437)
+2021-03-11 17:37:20,567 INFO     Received from ('127.0.0.1', 49445): AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,567 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 17:37:20,567 INFO     Closed the connection with ('127.0.0.1', 49445)

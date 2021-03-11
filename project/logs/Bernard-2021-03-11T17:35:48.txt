@@ -1,0 +1,46 @@
+2021-03-11 17:35:48,755 INFO     Opened server Bernard session
+2021-03-11 17:35:48,755 DEBUG    Using selector: KqueueSelector
+2021-03-11 17:35:48,756 INFO     Bernard serving on ('127.0.0.1', 15402)
+2021-03-11 17:35:59,660 INFO     Received from ('127.0.0.1', 49374): 
+
+2021-03-11 17:35:59,660 ERROR    Invalid message: 
+
+2021-03-11 17:35:59,660 INFO     Responded to client ('127.0.0.1', 49374): ? 
+
+2021-03-11 17:35:59,660 INFO     Closed the connection with ('127.0.0.1', 49374)
+2021-03-11 17:35:59,660 INFO     Received from ('127.0.0.1', 49374): 
+2021-03-11 17:35:59,660 ERROR    Invalid message: 
+2021-03-11 17:35:59,660 INFO     Responded to client ('127.0.0.1', 49374): ? 
+2021-03-11 17:35:59,660 INFO     Closed the connection with ('127.0.0.1', 49374)
+2021-03-11 17:36:03,183 INFO     Received from ('127.0.0.1', 49375): 
+
+2021-03-11 17:36:03,183 ERROR    Invalid message: 
+
+2021-03-11 17:36:03,183 INFO     Responded to client ('127.0.0.1', 49375): ? 
+
+2021-03-11 17:36:03,184 INFO     Closed the connection with ('127.0.0.1', 49375)
+2021-03-11 17:36:03,184 INFO     Received from ('127.0.0.1', 49375): 
+2021-03-11 17:36:03,184 ERROR    Invalid message: 
+2021-03-11 17:36:03,184 INFO     Responded to client ('127.0.0.1', 49375): ? 
+2021-03-11 17:36:03,184 INFO     Closed the connection with ('127.0.0.1', 49375)
+2021-03-11 17:36:09,801 INFO     Received from ('127.0.0.1', 49379): WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:36:09,801 ERROR    Error while handling command: invalid WHATSAT message client field: kiwi.cs.ucla.edu
+2021-03-11 17:36:09,801 INFO     Responded to client ('127.0.0.1', 49379): ? WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:36:09,801 INFO     Closed the connection with ('127.0.0.1', 49379)
+2021-03-11 17:36:09,801 INFO     Received from ('127.0.0.1', 49379): 
+2021-03-11 17:36:09,801 ERROR    Invalid message: 
+2021-03-11 17:36:09,801 INFO     Responded to client ('127.0.0.1', 49379): ? 
+2021-03-11 17:36:09,801 INFO     Closed the connection with ('127.0.0.1', 49379)
+2021-03-11 17:36:21,465 INFO     Received from ('127.0.0.1', 49384): WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:36:21,465 ERROR    Error while handling command: invalid WHATSAT message client field: kiwi.cs.ucla.edu
+2021-03-11 17:36:21,466 INFO     Responded to client ('127.0.0.1', 49384): ? WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:36:21,466 INFO     Closed the connection with ('127.0.0.1', 49384)
+2021-03-11 17:36:21,466 INFO     Received from ('127.0.0.1', 49384): 
+2021-03-11 17:36:21,466 ERROR    Invalid message: 
+2021-03-11 17:36:21,466 INFO     Responded to client ('127.0.0.1', 49384): ? 
+2021-03-11 17:36:21,466 INFO     Closed the connection with ('127.0.0.1', 49384)
+2021-03-11 17:36:33,671 INFO     Server Bernard closed.

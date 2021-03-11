@@ -182,16 +182,14 @@
 ))
 
 ;Taken from TA hint code.
-(define (test-expr-compare x y) 
-  (and (equal? (eval x)
-               (eval (list 'let '([% #t]) (expr-compare x y))))
-       (equal? (eval y)
-               (eval (list 'let '([% #f]) (expr-compare x y))))
+
+(define (test-expr-compare x y)
+  (and (equal? (eval x) (eval (list 'let '((% #t)) (expr-compare x y))))
+       (equal? (eval y) (eval (list 'let '((% #f)) (expr-compare x y))))
 ))
 
 (define test-expr-x '((lambda (a b c d) (cons (if a b c) d)) #t ((lambda (m n) (cons m n)) 8 24) (if #t 'w 'x) (+ 14 8))) 
 (define test-expr-y '((lambda (a j k d) (cons (if a j k) d)) #f ((λ (v n) (list v n)) 8 23) (list #t 'w 'x) (- 14 8)))
-
 
 (expr-compare 12 12) ; ⇒  12
 (expr-compare 12 20) ; ⇒  (if % 12 20)

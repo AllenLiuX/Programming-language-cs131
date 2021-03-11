@@ -1,0 +1,47 @@
+2021-03-11 17:36:34,230 INFO     Opened server Bernard session
+2021-03-11 17:36:34,231 DEBUG    Using selector: KqueueSelector
+2021-03-11 17:36:34,231 INFO     Bernard serving on ('127.0.0.1', 15402)
+2021-03-11 17:36:42,847 INFO     Received from ('127.0.0.1', 49399): WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:36:42,847 ERROR    Error while handling command: invalid WHATSAT message client field: kiwi.cs.ucla.edu
+2021-03-11 17:36:42,847 INFO     Responded to client ('127.0.0.1', 49399): ? WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:36:42,848 INFO     Closed the connection with ('127.0.0.1', 49399)
+2021-03-11 17:36:42,848 INFO     Received from ('127.0.0.1', 49399): 
+2021-03-11 17:36:42,848 ERROR    Invalid message: 
+2021-03-11 17:36:42,848 INFO     Responded to client ('127.0.0.1', 49399): ? 
+2021-03-11 17:36:42,848 INFO     Closed the connection with ('127.0.0.1', 49399)
+2021-03-11 17:37:20,557 INFO     Received from ('127.0.0.1', 49433): IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+
+2021-03-11 17:37:20,559 INFO     Propagating message to Jaquez: AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,559 INFO     Closing connection with Jaquez
+2021-03-11 17:37:20,560 INFO     Propagating message to Juzang: AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,560 INFO     Closing connection with Juzang
+2021-03-11 17:37:20,561 INFO     Propagating message to Campbell: AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,561 INFO     Closing connection with Campbell
+2021-03-11 17:37:20,562 INFO     Responded to client ('127.0.0.1', 49433): AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,562 INFO     Closed the connection with ('127.0.0.1', 49433)
+2021-03-11 17:37:20,562 INFO     Received from ('127.0.0.1', 49433): 
+2021-03-11 17:37:20,562 ERROR    Invalid message: 
+2021-03-11 17:37:20,562 INFO     Responded to client ('127.0.0.1', 49433): ? 
+2021-03-11 17:37:20,562 INFO     Closed the connection with ('127.0.0.1', 49433)
+2021-03-11 17:37:20,564 INFO     Received from ('127.0.0.1', 49440): AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,564 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 17:37:20,564 INFO     Closed the connection with ('127.0.0.1', 49440)
+2021-03-11 17:37:20,564 INFO     Received from ('127.0.0.1', 49441): AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,564 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 17:37:20,565 INFO     Closed the connection with ('127.0.0.1', 49441)
+2021-03-11 17:37:20,565 INFO     Received from ('127.0.0.1', 49443): AT Bernard +1246311.6389160156 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:37:20,566 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 17:37:20,566 INFO     Closed the connection with ('127.0.0.1', 49443)
+2021-03-11 17:37:29,503 INFO     Received from ('127.0.0.1', 49452): WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:37:29,503 INFO     Attempting to GET from https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=+34.068930,-118.445127&radius=10&key=AIzaSyAI4IRkMeECJEBQCKH6wrRiWu1X4k76xII
+2021-03-11 17:42:30,046 ERROR    Error while handling command: 
+2021-03-11 17:42:30,046 INFO     Responded to client ('127.0.0.1', 49452): ? WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:42:30,047 INFO     Closed the connection with ('127.0.0.1', 49452)
+2021-03-11 17:42:30,047 INFO     Received from ('127.0.0.1', 49452): 
+2021-03-11 17:42:30,047 ERROR    Invalid message: 
+2021-03-11 17:42:30,047 INFO     Responded to client ('127.0.0.1', 49452): ? 
+2021-03-11 17:42:30,047 INFO     Closed the connection with ('127.0.0.1', 49452)

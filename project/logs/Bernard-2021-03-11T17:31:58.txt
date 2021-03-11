@@ -1,0 +1,38 @@
+2021-03-11 17:31:58,107 INFO     Opened server Bernard session
+2021-03-11 17:31:58,107 DEBUG    Using selector: KqueueSelector
+2021-03-11 17:31:58,107 INFO     Bernard serving on ('127.0.0.1', 15402)
+2021-03-11 17:32:13,345 INFO     Received from ('127.0.0.1', 49277): IAMAT kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+
+2021-03-11 17:32:13,345 INFO     Propagating message to Jaquez: AT Bernard +1246004.4264051914 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:32:13,346 INFO     Closing connection with Jaquez
+2021-03-11 17:32:13,347 INFO     Propagating message to Juzang: AT Bernard +1246004.4264051914 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:32:13,348 INFO     Closing connection with Juzang
+2021-03-11 17:32:13,349 INFO     Propagating message to Campbell: AT Bernard +1246004.4264051914 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:32:13,349 INFO     Closing connection with Campbell
+2021-03-11 17:32:13,349 INFO     Responded to client ('127.0.0.1', 49277): AT Bernard +1246004.4264051914 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:32:13,349 INFO     Closed the connection with ('127.0.0.1', 49277)
+2021-03-11 17:32:13,349 INFO     Received from ('127.0.0.1', 49277): 
+2021-03-11 17:32:13,349 ERROR    Invalid message: 
+2021-03-11 17:32:13,350 INFO     Responded to client ('127.0.0.1', 49277): ? 
+2021-03-11 17:32:13,350 INFO     Closed the connection with ('127.0.0.1', 49277)
+2021-03-11 17:32:13,350 INFO     Received from ('127.0.0.1', 49285): AT Bernard +1246004.4264051914 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:32:13,350 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 17:32:13,350 INFO     Closed the connection with ('127.0.0.1', 49285)
+2021-03-11 17:32:13,350 INFO     Received from ('127.0.0.1', 49286): AT Bernard +1246004.4264051914 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:32:13,351 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 17:32:13,351 INFO     Closed the connection with ('127.0.0.1', 49286)
+2021-03-11 17:32:13,352 INFO     Received from ('127.0.0.1', 49287): AT Bernard +1246004.4264051914 kiwi.cs.ucla.edu +34.068930-118.445127 1614209128.918963997
+2021-03-11 17:32:13,352 INFO     Received redundant propagated info for client kiwi.cs.ucla.edu, ignoring.
+2021-03-11 17:32:13,352 INFO     Closed the connection with ('127.0.0.1', 49287)
+2021-03-11 17:32:41,491 INFO     Received from ('127.0.0.1', 49294): WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:32:41,492 INFO     Attempting to GET from https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=+34.068930,-118.445127&radius=10&key=AIzaSyAI4IRkMeECJEBQCKH6wrRiWu1X4k76xII
+2021-03-11 17:32:41,492 ERROR    Error while handling command: 'coroutine' object is not subscriptable
+2021-03-11 17:32:41,495 INFO     Responded to client ('127.0.0.1', 49294): ? WHATSAT kiwi.cs.ucla.edu 10 5
+
+2021-03-11 17:32:41,495 INFO     Closed the connection with ('127.0.0.1', 49294)
+2021-03-11 17:32:41,495 INFO     Received from ('127.0.0.1', 49294): 
+2021-03-11 17:32:41,495 ERROR    Invalid message: 
+2021-03-11 17:32:41,495 INFO     Responded to client ('127.0.0.1', 49294): ? 
+2021-03-11 17:32:41,495 INFO     Closed the connection with ('127.0.0.1', 49294)
+2021-03-11 17:35:46,911 INFO     Server Bernard closed.
