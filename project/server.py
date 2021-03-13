@@ -90,6 +90,16 @@ class Server:
         self.clients = {}
         write_log(f'Opened server {server_name}')
 
+    def run(self):
+        try:
+            server = await asyncio.start_server(self.handle_cmd, '127.0.0.1', self.port)
+            addr = server.sockets[0].getsockname()
+            write_log(f'{self.server_name} serving on {addr}')
+            async with server:
+                await server.serve_forever()
+        except KeyboardInterrupt:
+            write_log(f'Server {self.server_name} closed.')
+
     async def handle_cmd(self, reader, writer):
         while not reader.at_eof():
             data = await reader.readline()
@@ -187,19 +197,6 @@ class Server:
             except:
                 write_log(f'Failed to connect to server {reachable_server}')
 
-    async def server_entry(self):
-        server = await asyncio.start_server(self.handle_cmd, '127.0.0.1', self.port)
-        addr = server.sockets[0].getsockname()
-        write_log(f'{self.server_name} serving on {addr}')
-        async with server:
-            await server.serve_forever()
-
-    def run(self):
-        try:
-            asyncio.run(self.server_entry())
-        except KeyboardInterrupt:
-            write_log(f'Server {self.server_name} closed.')
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -221,4 +218,3 @@ if __name__ == "__main__":
     s = Server(server_name)
     s.run()
     logFile.close()
-
